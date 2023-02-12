@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Antonio;
+    font-weight: 400;
+    src: url("./assets/fonts/Antonio/static/Antonio-Regular.ttf");
+  }
+  @font-face {
+    font-family: Antonio;
+    font-weight: 500;
+    src: url("./assets/fonts/Antonio/static/Antonio-Medium.ttf");
+  }
+  @font-face {
+    font-family: Spartan;
+    font-weight: 400;
+    src: url("./assets/fonts/League_Spartan/static/LeagueSpartan-Regular.ttf");
+  }
+  @font-face {
+    font-family: Spartan;
+    font-weight: 700;
+    src: url("./assets/fonts/League_Spartan/static/LeagueSpartan-Bold.ttf");
+  }
+}
