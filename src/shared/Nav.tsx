@@ -10,9 +10,10 @@ export default function Nav({ isOpen }: Props) {
     <nav
       className={`${
         !isOpen && window.innerWidth < 768 ? "hidden" : "flex"
-      }  absolute w-full left-0 top-[75px] h-[calc(100vh-75px)] bg-neutral-100 z-10`}
+      }  absolute w-full left-0 top-[75px] h-[calc(100vh-75px)] bg-neutral-100 z-10
+      md:static md:h-auto`}
     >
-      <ul className="w-full mt-8 px-6 ">
+      <ul className="w-full mt-8 px-6 md:flex md:gap-x-8 justify-center md:px-0">
         <NavItem name="mercury" color="bg-accent-100" key={"mercury"} />
         <NavItem name="venus" color="bg-accent-200" key={"venus"} borderTop={true} />
         <NavItem name="earth" color="bg-accent-300" key={"earth"} borderTop={true} />
