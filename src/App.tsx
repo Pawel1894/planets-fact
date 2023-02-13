@@ -1,5 +1,12 @@
+import Header from "./shared/Header";
+
 function App() {
-  return <div>test</div>;
+  return (
+    <>
+      <Header />
+      <main></main>
+    </>
+  );
 }
 
 export default App;

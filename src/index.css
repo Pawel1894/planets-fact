@@ -23,4 +23,12 @@
     font-weight: 700;
     src: url("./assets/fonts/League_Spartan/static/LeagueSpartan-Bold.ttf");
   }
+
+  body {
+    background-image: url("./assets/background-stars.svg");
+    @apply bg-neutral-100;
+    @apply bg-cover;
+    @apply w-screen;
+    @apply min-h-screen;
+  }
 }
