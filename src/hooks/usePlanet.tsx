@@ -6,7 +6,9 @@ export default function usePlanet(planetName: string) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<any>();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    fetchPlanet();
+  }, [planetName]);
 
   async function fetchPlanet() {
     setIsLoading(true);
@@ -16,13 +18,16 @@ export default function usePlanet(planetName: string) {
       if (!response.ok || response.status !== 200) throw new Error("error fetching data");
 
       const data: TPlanet[] = await response.json();
-      const planetData = data.find((item) => item.name === planetName);
+      const planetData = data.find((item) => item.name.toLowerCase() === planetName.toLowerCase());
       setPlanet(planetData);
     } catch (error) {
       setError(error);
     }
 
-    setIsLoading(false);
+    // mimic real request delay..
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 400);
   }
 
   return {

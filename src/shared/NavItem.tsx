@@ -1,7 +1,9 @@
+import { NavLink } from "react-router-dom";
 import IconChevron from "../assets/icon-chevron.svg";
 import { PLANET } from "../enum";
 
 type Props = {
+  setIsOpen: (arg: boolean) => void;
   name: PLANET;
   color:
     | "accent-100"
@@ -37,20 +39,22 @@ const bgVariants = {
   "accent-800": "bg-accent-800",
 };
 
-export default function NavItem({ name, color, borderTop }: Props) {
+export default function NavItem({ name, color, borderTop, setIsOpen }: Props) {
   return (
     <li>
-      <button
+      <NavLink
+        to={`/${name}`}
         className={`items-center justify-between w-full flex py-5 uppercase text-white md:text-neutral-400 hover:text-white font-bold md:py-0 ${
           borderTop && "border-t border-t-neutral-200"
         } md:border-t-0 xl:border-t-4 xl:border-t-[transparent] ${hoverVariants[color]} xl:py-6`}
+        onClick={() => setIsOpen(false)}
       >
         <div className="flex items-center gap-6">
           <span className={`md:hidden h-5 w-5 rounded-full ${bgVariants[color]}`} aria-hidden={true}></span>
           <span className="uppercase">{name}</span>
         </div>
         <img className="md:hidden" src={IconChevron} aria-hidden={true} alt="" />
-      </button>
+      </NavLink>
     </li>
   );
 }

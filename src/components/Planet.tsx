@@ -15,20 +15,27 @@ export enum VIEW {
 
 export default function Planet() {
   const location = useLocation();
-  const { planet, error, isLoading } = usePlanet(location.pathname.split("/")[0]);
+  const planetName = location.pathname.split("/")[1];
+  const [currentView, setCurrentView] = useState<VIEW>(VIEW.overview);
+  const { planet, error, isLoading } = usePlanet(planetName);
 
-  if (isLoading) return <span>Loading</span>;
+  if (error) return <span className="text-white text-3xl my-4 text-center block">{error.message}</span>;
 
-  if (error) return <span>{error ? error : ""}</span>;
-
-  return (
-    <>
-      <div>
-        <Controls />
-        <PlanetImage />
-        <Content />
-      </div>
-      <Parameters />
-    </>
-  );
+  if (planet)
+    return (
+      <>
+        <div>
+          <Controls currentView={currentView} setCurrentView={setCurrentView} />
+          {isLoading || !planet ? (
+            <span className="text-white text-3xl my-4 text-center block">Loading...</span>
+          ) : (
+            <>
+              <PlanetImage currentView={currentView} images={planet?.images} />
+              <Content />
+            </>
+          )}
+        </div>
+        <Parameters />
+      </>
+    );
 }
