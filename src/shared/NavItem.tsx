@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { PlanetContext } from "../App";
 import IconChevron from "../assets/icon-chevron.svg";
+import { PLANET } from "../enum";
 
 type Props = {
-  name: string;
+  name: PLANET;
   color:
     | "accent-100"
     | "accent-200"
@@ -38,13 +40,20 @@ const bgVariants = {
 };
 
 export default function NavItem({ name, color, borderTop }: Props) {
+  const { planet, setPlanet } = useContext(PlanetContext);
+
+  function onClickHandler() {
+    setPlanet(name);
+  }
+
   return (
-    <li
-      className={`flex py-5 uppercase text-white font-bold md:py-0 ${
-        borderTop && "border-t border-t-neutral-200"
-      } md:border-t-0 xl:border-t-4 xl:border-t-[transparent] ${hoverVariants[color]} xl:py-6`}
-    >
-      <button className="flex items-center justify-between w-full">
+    <li>
+      <button
+        onClick={onClickHandler}
+        className={`items-center justify-between w-full flex py-5 uppercase text-white md:text-neutral-400 hover:text-white font-bold md:py-0 ${
+          borderTop && "border-t border-t-neutral-200"
+        } md:border-t-0 xl:border-t-4 xl:border-t-[transparent] ${hoverVariants[color]} xl:py-6`}
+      >
         <div className="flex items-center gap-6">
           <span className={`md:hidden h-5 w-5 rounded-full ${bgVariants[color]}`} aria-hidden={true}></span>
           <span className="uppercase">{name}</span>
