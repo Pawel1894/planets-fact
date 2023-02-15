@@ -1,7 +1,12 @@
 import React from "react";
+import { VIEW } from "./Planet";
 
-type Props = {};
-
-export default function Content({}: Props) {
-  return <div>Content</div>;
+export default function Content() {
+  return (
+    <div>
+      <button>overview</button>
+      <button>structure</button>
+      <button>surface</button>
+    </div>
+  );
 }

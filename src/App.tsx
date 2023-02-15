@@ -1,25 +1,19 @@
-import { createContext, useState } from "react";
+import { useState } from "react";
+import { Navigate, Route, Routes } from "react-router";
+import Planet from "./components/Planet";
 import { PLANET } from "./enum";
-import Header from "./shared/Header";
-
-export const PlanetContext = createContext({
-  planet: PLANET.mercury,
-  setPlanet: (planet: PLANET) => {},
-});
+import Container from "./shared/Container";
 
 function App() {
   const [planet, setPlanet] = useState<PLANET>(PLANET.mercury);
 
   return (
-    <PlanetContext.Provider
-      value={{
-        planet: planet,
-        setPlanet,
-      }}
-    >
-      <Header />
-      <main></main>
-    </PlanetContext.Provider>
+    <Routes>
+      <Route element={<Container />}>
+        <Route path="/:name" element={<Planet />} />
+        <Route path="*" element={<Navigate to="/mercury" replace />} />
+      </Route>
+    </Routes>
   );
 }
 

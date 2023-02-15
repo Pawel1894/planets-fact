@@ -1,5 +1,3 @@
-import React, { useContext } from "react";
-import { PlanetContext } from "../App";
 import IconChevron from "../assets/icon-chevron.svg";
 import { PLANET } from "../enum";
 
@@ -40,16 +38,9 @@ const bgVariants = {
 };
 
 export default function NavItem({ name, color, borderTop }: Props) {
-  const { planet, setPlanet } = useContext(PlanetContext);
-
-  function onClickHandler() {
-    setPlanet(name);
-  }
-
   return (
     <li>
       <button
-        onClick={onClickHandler}
         className={`items-center justify-between w-full flex py-5 uppercase text-white md:text-neutral-400 hover:text-white font-bold md:py-0 ${
           borderTop && "border-t border-t-neutral-200"
         } md:border-t-0 xl:border-t-4 xl:border-t-[transparent] ${hoverVariants[color]} xl:py-6`}
