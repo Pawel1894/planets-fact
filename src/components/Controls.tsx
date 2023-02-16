@@ -22,13 +22,13 @@ const styleVariants = {
 export default function Controls({ currentView, setCurrentView }: Props) {
   const planet = useCurrentPlanet();
 
-  if (!planet) return null;
-
   return (
     <div className="px-6 flex justify-between border-b border-b-neutral-200">
       <button
         className={`control-btn ${
-          currentView === VIEW.overview ? `control-btn_active ${styleVariants[planet]}` : ""
+          currentView === VIEW.overview
+            ? `control-btn_active ${planet ? styleVariants[planet] : "bg-accent-100"}`
+            : ""
         }`}
         onClick={() => setCurrentView(VIEW.overview)}
       >
@@ -36,7 +36,9 @@ export default function Controls({ currentView, setCurrentView }: Props) {
       </button>
       <button
         className={`control-btn ${
-          currentView === VIEW.structure ? `control-btn_active ${styleVariants[planet]}` : ""
+          currentView === VIEW.structure
+            ? `control-btn_active ${planet ? styleVariants[planet] : "bg-accent-100"}`
+            : ""
         }`}
         onClick={() => setCurrentView(VIEW.structure)}
       >
@@ -44,7 +46,9 @@ export default function Controls({ currentView, setCurrentView }: Props) {
       </button>
       <button
         className={`control-btn ${
-          currentView === VIEW.surface ? `control-btn_active ${styleVariants[planet]}` : ""
+          currentView === VIEW.surface
+            ? `control-btn_active ${planet ? styleVariants[planet] : "bg-accent-100"}`
+            : ""
         }`}
         onClick={() => setCurrentView(VIEW.surface)}
       >
