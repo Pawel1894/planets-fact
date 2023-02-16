@@ -37,7 +37,7 @@ export default function Planet() {
           ) : (
             <>
               <PlanetImage currentView={currentView} images={planet?.images} />
-              <Content />
+              <Content currentView={currentView} planet={planet} />
             </>
           )}
         </div>

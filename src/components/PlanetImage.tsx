@@ -14,7 +14,7 @@ export default function PlanetImage({ images, currentView }: Props) {
       {currentView === VIEW.surface ? (
         <>
           <img className="w-1/3 max-w-[290px]" src={images.planet} />
-          <img className="w-1/6 max-w-[148px] -translate-y-1/3" src={images.geology} />
+          <img className="w-1/6 max-w-[148px] translate-y-full absolute" src={images.geology} />
         </>
       ) : null}
       {currentView === VIEW.structure ? <img className="w-1/3 max-w-[290px]" src={images.internal} /> : null}
