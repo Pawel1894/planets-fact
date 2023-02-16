@@ -20,3 +20,5 @@ export type TOverview = {
   content: string;
   source: string;
 };
+
+export type TypePlanet = "mercury" | "venus" | "earth" | "mars" | "jupiter" | "saturn" | "uranus" | "neptune";

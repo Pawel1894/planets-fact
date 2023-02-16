@@ -1,5 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useLocation } from "react-router";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import { isOfTypePlanet } from "../helper";
+import useCurrentPlanet from "../hooks/useCurrentPlanet";
 import usePlanet from "../hooks/usePlanet";
 
 import Content from "./Content";
@@ -14,10 +16,14 @@ export enum VIEW {
 }
 
 export default function Planet() {
-  const location = useLocation();
-  const planetName = location.pathname.split("/")[1];
+  const navigate = useNavigate();
+  const planetName = useCurrentPlanet();
   const [currentView, setCurrentView] = useState<VIEW>(VIEW.overview);
   const { planet, error, isLoading } = usePlanet(planetName);
+
+  useEffect(() => {
+    if (!planetName || !isOfTypePlanet(planetName)) navigate("/mercury");
+  }, [planetName]);
 
   if (error) return <span className="text-white text-3xl my-4 text-center block">{error.message}</span>;
 
