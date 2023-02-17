@@ -21,27 +21,28 @@ export default function Planet() {
   const [currentView, setCurrentView] = useState<VIEW>(VIEW.overview);
   const { planet, error, isLoading } = usePlanet(planetName);
 
+  if (error) return <span className="text-white text-3xl my-4 text-center block">{error.message}</span>;
+
   useEffect(() => {
     if (!planetName || !isOfTypePlanet(planetName)) navigate("/mercury");
   }, [planetName]);
 
-  if (error) return <span className="text-white text-3xl my-4 text-center block">{error.message}</span>;
+  if (isLoading || !planet)
+    return <span className="text-white text-3xl my-4 text-center block">Loading...</span>;
 
-  if (planet)
-    return (
-      <>
-        <div>
-          <Controls currentView={currentView} setCurrentView={setCurrentView} />
-          {isLoading || !planet ? (
-            <span className="text-white text-3xl my-4 text-center block">Loading...</span>
-          ) : (
-            <>
-              <PlanetImage currentView={currentView} images={planet?.images} />
-              <Content currentView={currentView} planet={planet} />
-            </>
-          )}
-        </div>
-        <Parameters />
-      </>
-    );
+  return (
+    <main className="pb-11">
+      <div>
+        <Controls currentView={currentView} setCurrentView={setCurrentView} />
+        <PlanetImage currentView={currentView} images={planet?.images} />
+        <Content currentView={currentView} planet={planet} />
+      </div>
+      <Parameters
+        revolution={planet.revolution}
+        radius={planet.radius}
+        rotation={planet.rotation}
+        temperature={planet.temperature}
+      />
+    </main>
+  );
 }

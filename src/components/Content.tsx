@@ -13,7 +13,7 @@ export default function Content({ planet, currentView }: Props) {
       case VIEW.overview:
         return (
           <>
-            <p className="mt-4 text-xs">{planet.overview.content}</p>
+            <p className="leading-5 mt-4 text-xs">{planet.overview.content}</p>
             <a
               className="text-neutral-500 mt-8 flex justify-center items-center text-xs"
               href={planet.overview.source}
@@ -27,7 +27,7 @@ export default function Content({ planet, currentView }: Props) {
       case VIEW.structure:
         return (
           <>
-            <p className="mt-4 text-xs">{planet.structure.content}</p>
+            <p className="leading-5 mt-4 text-xs">{planet.structure.content}</p>
             <a
               className="text-neutral-500 mt-8 flex justify-center items-center text-xs"
               href={planet.structure.source}
@@ -40,7 +40,7 @@ export default function Content({ planet, currentView }: Props) {
       case VIEW.surface:
         return (
           <>
-            <p className="mt-4 text-xs">{planet.geology.content}</p>
+            <p className="leading-5 mt-4 text-xs">{planet.geology.content}</p>
             <a
               className="text-neutral-500 mt-8 flex justify-center items-center text-xs"
               href={planet.geology.source}

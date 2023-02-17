@@ -5,8 +5,6 @@ import { PLANET } from "./enum";
 import Container from "./shared/Container";
 
 function App() {
-  const [planet, setPlanet] = useState<PLANET>(PLANET.mercury);
-
   return (
     <Routes>
       <Route element={<Container />}>
