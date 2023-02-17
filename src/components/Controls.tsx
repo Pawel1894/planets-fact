@@ -25,9 +25,11 @@ export default function Controls({ currentView, setCurrentView }: Props) {
   return (
     <div className="px-6 flex justify-between border-b border-b-neutral-200">
       <button
-        className={`control-btn ${
+        className={`relative pb-5 pt-6 uppercase text-xs font-bold text-neutral-400 ${
           currentView === VIEW.overview
-            ? `control-btn_active ${planet ? styleVariants[planet] : "bg-accent-100"}`
+            ? `before:absolute before:-bottom-[1px] before:left-0 before:w-full before:h-1 text-white ${
+                planet ? styleVariants[planet] : "bg-accent-100"
+              }`
             : ""
         }`}
         onClick={() => setCurrentView(VIEW.overview)}
@@ -35,9 +37,11 @@ export default function Controls({ currentView, setCurrentView }: Props) {
         overview
       </button>
       <button
-        className={`control-btn ${
+        className={`relative pb-5 pt-6 uppercase text-xs font-bold text-neutral-400 ${
           currentView === VIEW.structure
-            ? `control-btn_active ${planet ? styleVariants[planet] : "bg-accent-100"}`
+            ? `before:absolute before:-bottom-[1px] before:left-0 before:w-full before:h-1 text-white ${
+                planet ? styleVariants[planet] : "bg-accent-100"
+              }`
             : ""
         }`}
         onClick={() => setCurrentView(VIEW.structure)}
@@ -45,9 +49,11 @@ export default function Controls({ currentView, setCurrentView }: Props) {
         structure
       </button>
       <button
-        className={`control-btn ${
+        className={`relative pb-5 pt-6 uppercase text-xs font-bold text-neutral-400 ${
           currentView === VIEW.surface
-            ? `control-btn_active ${planet ? styleVariants[planet] : "bg-accent-100"}`
+            ? `before:absolute before:-bottom-[1px] before:left-0 before:w-full before:h-1 text-white ${
+                planet ? styleVariants[planet] : "bg-accent-100"
+              }`
             : ""
         }`}
         onClick={() => setCurrentView(VIEW.surface)}

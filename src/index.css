@@ -27,35 +27,6 @@
   body {
     background-image: url("./assets/background-stars.svg");
     @apply bg-neutral-100;
-    @apply bg-cover;
-    @apply w-screen;
     @apply min-h-screen;
-  }
-}
-
-@layer components {
-  .nav {
-    @apply md:flex absolute w-full left-0 top-[75px] bg-neutral-100 z-10
-    md:visible md:static md:h-auto xl:w-auto xl:ml-auto flex invisible h-0 transition-all duration-300;
-  }
-
-  .nav_active {
-    @apply visible h-[calc(100vh-75px)] transition-all duration-500;
-  }
-
-  .nav-items {
-    @apply invisible opacity-0 md:opacity-100 md:visible w-full mt-8 px-6 md:flex md:gap-x-8 justify-center md:px-0 xl:justify-end xl:mt-0;
-  }
-
-  .nav-items_active {
-    @apply visible opacity-100 transition duration-500 delay-200;
-  }
-
-  .control-btn {
-    @apply relative pb-5 pt-6 uppercase text-xs font-bold text-neutral-400;
-  }
-
-  .control-btn_active {
-    @apply before:absolute before:-bottom-[1px] before:left-0 before:w-full before:h-1 text-white;
   }
 }

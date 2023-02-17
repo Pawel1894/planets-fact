@@ -27,7 +27,7 @@ export default function usePlanet(planetName?: string) {
     // mimic real request delay..
     setTimeout(() => {
       setIsLoading(false);
-    }, 400);
+    }, 700);
   }
 
   return {

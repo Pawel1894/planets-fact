@@ -12,7 +12,11 @@ export default function Header() {
       <span className="uppercase font-antonio font-medium text-white text-[28px]">the planets</span>
       <Hamburger setIsOpen={setIsOpen} isOpen={isOpen} />
       <Nav isOpen={isOpen}>
-        <ul className={`nav-items ${isOpen ? "nav-items_active" : ""}`}>
+        <ul
+          className={`md:opacity-100 md:visible w-full mt-8 px-6 md:flex md:gap-x-8 justify-center md:px-0 xl:justify-end xl:mt-0 ${
+            isOpen ? "visible opacity-100 transition duration-500 delay-200" : "invisible opacity-0"
+          }`}
+        >
           <NavItem setIsOpen={setIsOpen} name={PLANET.mercury} color="accent-100" key={"mercury"} />
           <NavItem
             setIsOpen={setIsOpen}
