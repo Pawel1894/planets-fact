@@ -51,7 +51,7 @@ export default function NavItem({ name, color, borderTop, setIsOpen }: Props) {
       >
         <div className="flex items-center gap-6">
           <span className={`md:hidden h-5 w-5 rounded-full ${bgVariants[color]}`} aria-hidden={true}></span>
-          <span className="uppercase">{name}</span>
+          <span className="uppercase text-base md:text-sm">{name}</span>
         </div>
         <img className="md:hidden" src={IconChevron} aria-hidden={true} alt="" />
       </NavLink>

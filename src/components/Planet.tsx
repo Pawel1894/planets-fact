@@ -32,7 +32,7 @@ export default function Planet() {
 
   return (
     <main className="pb-11">
-      <div>
+      <div className="grid md:grid-cols-2 md:gap-x-20">
         <Controls currentView={currentView} setCurrentView={setCurrentView} />
         <PlanetImage currentView={currentView} images={planet?.images} />
         <Content currentView={currentView} planet={planet} />

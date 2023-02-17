@@ -13,9 +13,9 @@ export default function Content({ planet, currentView }: Props) {
       case VIEW.overview:
         return (
           <>
-            <p className="leading-5 mt-4 text-xs">{planet.overview.content}</p>
+            <p className="leading-5 mt-4 md:mt-6 text-xs">{planet.overview.content}</p>
             <a
-              className="text-neutral-500 mt-8 flex justify-center items-center text-xs"
+              className="text-neutral-500 mt-8 flex justify-center items-center text-xs md:justify-start"
               href={planet.overview.source}
             >
               Source&nbsp;:&nbsp;<span className="bg-none font-bold underline"> Wikipedia</span>
@@ -27,9 +27,9 @@ export default function Content({ planet, currentView }: Props) {
       case VIEW.structure:
         return (
           <>
-            <p className="leading-5 mt-4 text-xs">{planet.structure.content}</p>
+            <p className="leading-5 mt-4 md:mt-6 text-xs">{planet.structure.content}</p>
             <a
-              className="text-neutral-500 mt-8 flex justify-center items-center text-xs"
+              className="text-neutral-500 mt-8 flex justify-center items-center text-xs md:justify-start"
               href={planet.structure.source}
             >
               Source&nbsp;:&nbsp;<span className="bg-none font-bold underline"> Wikipedia</span>
@@ -40,9 +40,9 @@ export default function Content({ planet, currentView }: Props) {
       case VIEW.surface:
         return (
           <>
-            <p className="leading-5 mt-4 text-xs">{planet.geology.content}</p>
+            <p className="leading-5 mt-4 md:mt-6 text-xs">{planet.geology.content}</p>
             <a
-              className="text-neutral-500 mt-8 flex justify-center items-center text-xs"
+              className="text-neutral-500 mt-8 flex justify-center items-center text-xs md:justify-start"
               href={planet.geology.source}
             >
               Source&nbsp;:&nbsp;<span className="bg-none font-bold underline"> Wikipedia</span>
@@ -57,8 +57,8 @@ export default function Content({ planet, currentView }: Props) {
   }
 
   return (
-    <div className="px-6 text-center text-white">
-      <h1 className="text-white font-antonio text-[2.5rem]">{planet.name}</h1>
+    <div className="px-6 text-center text-white md:text-left">
+      <h1 className="text-white font-antonio uppercase text-[2.5rem] md:text-5xl">{planet.name}</h1>
       {renderDescription()}
     </div>
   );

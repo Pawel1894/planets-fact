@@ -23,7 +23,7 @@ export default function PlanetImage({ images, currentView }: Props) {
   const planet = useCurrentPlanet();
 
   return (
-    <div className="flex flex-col justify-center items-center my-24  ">
+    <div className="flex flex-col justify-center items-center my-24 md:col-span-2">
       {currentView === VIEW.overview ? (
         <img
           className={`${planet ? styleVariants[planet] : "h-[6.9375rem] md:h-[11.5rem] xl:h-[18.125rem]"}`}

@@ -23,7 +23,7 @@ export default function Controls({ currentView, setCurrentView }: Props) {
   const planet = useCurrentPlanet();
 
   return (
-    <div className="px-6 flex justify-between border-b border-b-neutral-200">
+    <div className="px-6 flex justify-between border-b border-b-neutral-200 md:row-start-2 md:col-start-2">
       <button
         className={`relative pb-5 pt-6 uppercase text-xs font-bold text-neutral-400 ${
           currentView === VIEW.overview
