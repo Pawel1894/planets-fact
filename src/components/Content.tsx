@@ -57,7 +57,7 @@ export default function Content({ planet, currentView }: Props) {
   }
 
   return (
-    <div className="px-6 text-center text-white md:text-left">
+    <div className="px-6 md:px-0 text-center text-white md:text-left">
       <h1 className="text-white font-antonio uppercase text-[2.5rem] md:text-5xl">{planet.name}</h1>
       {renderDescription()}
     </div>
