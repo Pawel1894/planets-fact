@@ -19,7 +19,7 @@ export default function Planet() {
   const navigate = useNavigate();
   const planetName = useCurrentPlanet();
   const [currentView, setCurrentView] = useState<VIEW>(VIEW.overview);
-  const { planet, error } = usePlanet(planetName);
+  const { planet, error, isLoading } = usePlanet(planetName);
 
   if (error) return <span className="text-white text-3xl my-4 text-center block">{error.message}</span>;
 
@@ -27,7 +27,8 @@ export default function Planet() {
     if (!planetName || !isOfTypePlanet(planetName)) navigate("/mercury");
   }, [planetName]);
 
-  if (!planet) return <span className="text-white text-3xl my-4 text-center block">Loading...</span>;
+  if (isLoading || !planet)
+    return <span className="text-white text-3xl my-4 text-center block">Loading...</span>;
 
   return (
     <main className="pb-11 max-w-[90rem] mx-auto xl:mt-32 xl:mx-[165px]">
