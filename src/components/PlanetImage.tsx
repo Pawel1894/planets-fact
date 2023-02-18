@@ -19,11 +19,26 @@ const styleVariants = {
   neptune: "h-[10.8125rem] md:h-[17.8125rem] xl:h-[28.125rem]",
 };
 
+const marginVariants = {
+  mercury: "my-24 md:my-[8.4375rem]",
+  venus: "my-[4.625rem] md:my-28",
+  earth: "my-16 md:my-24",
+  mars: "my-[87px] md:my-[8.25rem]",
+  jupiter: "my-10 md:my-14",
+  saturn: "my-6 md:my-7",
+  uranus: "my-16 md:my-20",
+  neptune: "my-16 md:my-20",
+};
+
 export default function PlanetImage({ images, currentView }: Props) {
   const planet = useCurrentPlanet();
 
   return (
-    <div className="flex flex-col justify-center items-center my-24 md:col-span-2">
+    <div
+      className={`flex flex-col justify-center items-center md:col-span-2  ${
+        planet ? marginVariants[planet] : "my-10 md:my-14 "
+      }`}
+    >
       {currentView === VIEW.overview ? (
         <img
           className={`${planet ? styleVariants[planet] : "h-[6.9375rem] md:h-[11.5rem] xl:h-[18.125rem]"}`}
@@ -36,7 +51,10 @@ export default function PlanetImage({ images, currentView }: Props) {
             className={`${planet ? styleVariants[planet] : "h-[6.9375rem] md:h-[11.5rem] xl:h-[18.125rem]"}`}
             src={images.planet}
           />
-          <img className="w-1/6 max-w-[10.1875rem] translate-y-full absolute" src={images.geology} />
+          <img
+            className="w-1/6 max-w-[10.1875rem] translate-y-full md:translate-y-3/4 absolute"
+            src={images.geology}
+          />
         </>
       ) : null}
       {currentView === VIEW.structure ? (

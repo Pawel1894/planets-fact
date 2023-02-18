@@ -28,7 +28,7 @@ export default function Controls({ currentView, setCurrentView }: Props) {
       md:flex-col md:gap-4 md:justify-start`}
     >
       <button
-        className={`relative pb-5 pt-6 uppercase text-xs font-bold text-neutral-400 md:before:hidden md:text-left border border-neutral-200 md:py-3 md:px-5 
+        className={`relative pb-5 pt-6 uppercase text-xs font-bold text-neutral-400 md:before:hidden md:text-left md:border md:border-neutral-200 md:py-3 md:px-5 
         md:flex md:flex-row md:gap-[0.875rem]
         ${
           currentView === VIEW.overview
@@ -43,7 +43,7 @@ export default function Controls({ currentView, setCurrentView }: Props) {
         <span>overview</span>
       </button>
       <button
-        className={`relative pb-5 pt-6 uppercase text-xs font-bold text-neutral-400 md:before:hidden md:text-left border border-neutral-200 md:py-3 md:px-5 
+        className={`relative pb-5 pt-6 uppercase text-xs font-bold text-neutral-400 md:before:hidden md:text-left md:border md:border-neutral-200 md:py-3 md:px-5 
         md:flex md:flex-row md:gap-[0.875rem]
         ${
           currentView === VIEW.structure
@@ -58,7 +58,7 @@ export default function Controls({ currentView, setCurrentView }: Props) {
         <span>structure</span>
       </button>
       <button
-        className={`relative pb-5 pt-6 uppercase text-xs font-bold text-neutral-400 md:before:hidden md:text-left border border-neutral-200 md:py-3 md:px-5 
+        className={`relative pb-5 pt-6 uppercase text-xs font-bold text-neutral-400 md:before:hidden md:text-left md:border md:border-neutral-200 md:py-3 md:px-5 
         md:flex md:flex-row md:gap-[0.875rem]
         ${
           currentView === VIEW.surface
