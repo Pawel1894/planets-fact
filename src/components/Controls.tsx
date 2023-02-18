@@ -36,7 +36,7 @@ export default function Controls({ currentView, setCurrentView }: Props) {
       >
         <>
           <span className="hidden md:block text-neutral-500 tracking-widest">01</span>
-          <h3>overview</h3>
+          <span>overview</span>
         </>
       </ControlBtn>
       <ControlBtn
@@ -47,9 +47,9 @@ export default function Controls({ currentView, setCurrentView }: Props) {
       >
         <>
           <span className="hidden md:block text-neutral-500 tracking-widest">02</span>
-          <h3>
+          <span>
             <span className="hidden md:inline-block">internal</span> structure
-          </h3>
+          </span>
         </>
       </ControlBtn>
       <ControlBtn
@@ -60,9 +60,9 @@ export default function Controls({ currentView, setCurrentView }: Props) {
       >
         <>
           <span className="hidden md:block text-neutral-500 tracking-widest">03</span>
-          <h3>
+          <span>
             surface <span className="hidden md:inline-block">geology</span>
-          </h3>
+          </span>
         </>
       </ControlBtn>
     </div>

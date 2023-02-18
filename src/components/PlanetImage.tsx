@@ -43,6 +43,7 @@ export default function PlanetImage({ images, currentView }: Props) {
         <img
           className={`${planet ? styleVariants[planet] : "h-[6.9375rem] md:h-[11.5rem] xl:h-[18.125rem]"}`}
           src={images.planet}
+          alt="planet overview"
         />
       ) : null}
       {currentView === VIEW.surface ? (
@@ -50,6 +51,7 @@ export default function PlanetImage({ images, currentView }: Props) {
           <img
             className={`${planet ? styleVariants[planet] : "h-[6.9375rem] md:h-[11.5rem] xl:h-[18.125rem]"}`}
             src={images.planet}
+            alt="planet surface"
           />
           <img
             className="w-1/6 max-w-[10.1875rem] translate-y-full md:translate-y-3/4 absolute"
@@ -61,6 +63,7 @@ export default function PlanetImage({ images, currentView }: Props) {
         <img
           className={`${planet ? styleVariants[planet] : "h-[6.9375rem] md:h-[11.5rem] xl:h-[18.125rem]"}`}
           src={images.internal}
+          alt="planet structure"
         />
       ) : null}
     </div>
