@@ -20,14 +20,14 @@ const styleVariants = {
 };
 
 const marginVariants = {
-  mercury: "my-24 md:my-[8.4375rem]",
-  venus: "my-[4.625rem] md:my-28",
-  earth: "my-16 md:my-24",
-  mars: "my-[87px] md:my-[8.25rem]",
-  jupiter: "my-10 md:my-14",
-  saturn: "my-6 md:my-7",
-  uranus: "my-16 md:my-20",
-  neptune: "my-16 md:my-20",
+  mercury: "my-24 md:my-[8.4375rem] xl:my-0",
+  venus: "my-[4.625rem] md:my-28 xl:my-0",
+  earth: "my-16 md:my-24 xl:my-0",
+  mars: "my-[87px] md:my-[8.25rem] xl:my-0",
+  jupiter: "my-10 md:my-14 xl:my-0",
+  saturn: "my-6 md:my-7 xl:my-0",
+  uranus: "my-16 md:my-20 xl:my-0",
+  neptune: "my-16 md:my-20 xl:my-0",
 };
 
 export default function PlanetImage({ images, currentView }: Props) {
@@ -35,7 +35,7 @@ export default function PlanetImage({ images, currentView }: Props) {
 
   return (
     <div
-      className={`flex flex-col justify-center items-center md:col-span-2  ${
+      className={`flex flex-col justify-center items-center md:col-span-2 xl:col-auto xl:row-span-2  ${
         planet ? marginVariants[planet] : "my-10 md:my-14 "
       }`}
     >
