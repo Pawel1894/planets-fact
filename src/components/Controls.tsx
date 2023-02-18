@@ -35,7 +35,7 @@ export default function Controls({ currentView, setCurrentView }: Props) {
         setCurrentView={setCurrentView}
       >
         <>
-          <span className="hidden md:block text-neutral-500 tracking-widest">03</span>
+          <span className="hidden md:block text-neutral-500 tracking-widest">01</span>
           <h3>overview</h3>
         </>
       </ControlBtn>
@@ -46,7 +46,7 @@ export default function Controls({ currentView, setCurrentView }: Props) {
         setCurrentView={setCurrentView}
       >
         <>
-          <span className="hidden md:block text-neutral-500 tracking-widest">03</span>
+          <span className="hidden md:block text-neutral-500 tracking-widest">02</span>
           <h3>
             <span className="hidden md:inline-block">internal</span> structure
           </h3>
