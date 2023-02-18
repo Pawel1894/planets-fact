@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import IconChevron from "../assets/icon-chevron.svg";
 import { PLANET } from "../enum";
+import useCurrentPlanet from "../hooks/useCurrentPlanet";
 
 type Props = {
   setIsOpen: (arg: boolean) => void;
@@ -28,6 +29,17 @@ const hoverVariants = {
   "accent-800": "xl:hover:border-t-accent-800",
 };
 
+const activeVariants = {
+  "accent-100": "xl:border-t-accent-100",
+  "accent-200": "xl:border-t-accent-200",
+  "accent-300": "xl:border-t-accent-300",
+  "accent-400": "xl:border-t-accent-400",
+  "accent-500": "xl:border-t-accent-500",
+  "accent-600": "xl:border-t-accent-600",
+  "accent-700": "xl:border-t-accent-700",
+  "accent-800": "xl:border-t-accent-800",
+};
+
 const bgVariants = {
   "accent-100": "bg-accent-100",
   "accent-200": "bg-accent-200",
@@ -40,13 +52,17 @@ const bgVariants = {
 };
 
 export default function NavItem({ name, color, borderTop, setIsOpen }: Props) {
+  const planet = useCurrentPlanet();
+
   return (
     <li>
       <NavLink
         to={`/${name}`}
         className={`items-center justify-between w-full flex py-5 uppercase text-white md:text-neutral-400 hover:text-white font-bold md:py-0 ${
           borderTop && "border-t border-t-neutral-200"
-        } md:border-t-0 xl:border-t-4 xl:border-t-[transparent] ${hoverVariants[color]} xl:py-6`}
+        } md:border-t-0 xl:border-t-4 xl:border-t-[transparent] ${hoverVariants[color]} xl:py-6 ${
+          planet && planet === name ? activeVariants[color] : ""
+        }`}
         onClick={() => setIsOpen(false)}
       >
         <div className="flex items-center gap-6">
