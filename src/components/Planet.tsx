@@ -31,7 +31,7 @@ export default function Planet() {
     return <span className="text-white text-3xl my-4 text-center block">Loading...</span>;
 
   return (
-    <main className="pb-11 max-w-[90rem] mx-auto xl:mt-32 xl:mx-[165px]">
+    <main className="pb-11 max-w-[90rem] mx-auto xl:mt-32 xl:mx-[165px] 2xl:mx-auto">
       <div className="grid md:grid-cols-2 md:gap-x-20 md:mx-10 xl:mx-0 xl:grid-cols-[auto_350px] xl:gap-y-10">
         <Controls currentView={currentView} setCurrentView={setCurrentView} />
         <PlanetImage currentView={currentView} images={planet?.images} />
